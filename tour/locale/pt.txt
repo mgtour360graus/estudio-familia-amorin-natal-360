@@ -1,0 +1,22 @@
+#: locale=pt
+
+## Media
+
+### Title
+panorama_A0455CA9_B22F_663F_41CD_61E09D1868AC.label = _MG_1899-HDR Panorama
+panorama_A2061F87_B22F_22F3_41CA_FF95F1288045.label = _MG_1911-HDR Panorama
+panorama_A206A225_B22E_E236_41E3_3FB6DEF7AE96.label = _MG_1923-HDR Panorama
+panorama_A20730ED_B22E_FE36_41B6_FA5B78978163.label = _MG_1935-HDR Panorama
+panorama_A2074BAB_B22E_E232_41B2_174358DAD1F2.label = _MG_1947-HDR Panorama
+panorama_A238E658_B211_221D_41D8_DBF4003149B8.label = _MG_1962-HDR Panorama
+panorama_A238EEB0_B211_222E_41CB_CD8B499CE219.label = _MG_1986-HDR Panorama
+panorama_A238DC6E_B211_6632_4196_036EE37A7164.label = _MG_2001-HDR Panorama
+panorama_A239272C_B211_6235_41D2_3C7377E645DF.label = _MG_2013-HDR Panorama
+panorama_A23944D8_B211_261D_419F_5B92BDB7506A.label = _MG_2025-HDR Panorama
+
+## Tour
+
+### Description
+
+### Title
+tour.name = Estúdio Família Amorin
