@@ -2,6 +2,12 @@
 
 ## Media
 
+### Audio
+audiores_92846855_B1EF_2E17_41DD_7EF5CA38914C.url = media/audio_AC637F3C_B211_2216_41DA_20F7FE2B21CA_pt.mp3
+audiores_9297B34A_B1EF_227D_41E2_37D576DDDD21.url = media/audio_AE0BC6FD_B211_2216_41E0_98AE79596E83_pt.mp3
+
+### Audio Subtitles
+
 ### Title
 panorama_A0455CA9_B22F_663F_41CD_61E09D1868AC.label = _MG_1899-HDR Panorama
 panorama_A2061F87_B22F_22F3_41CA_FF95F1288045.label = _MG_1911-HDR Panorama
@@ -17,6 +23,7 @@ panorama_A23944D8_B211_261D_419F_5B92BDB7506A.label = _MG_2025-HDR Panorama
 ## Tour
 
 ### Description
+tour.description = Faça Um tour em 360°
 
 ### Title
 tour.name = Estúdio Família Amorin

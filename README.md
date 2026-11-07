@@ -33,3 +33,10 @@ Inclui somente a versão web do tour, a skin e os recursos visuais usados. Fotog
 Endereço conferido no perfil Google informado pelo cliente: Rua Joaquim Nabuco, 810, Zona 04, Maringá–PR.
 
 Criação: MG Tour 360°. Fotografias e identidade visual: seus respectivos titulares. Não há licença genérica de reutilização das imagens ou da marca.
+
+
+## Revisão de 07/11/2026
+
+Nova exportação nativa com favicon e ícones para dispositivos incorporada. Menu redesenhado com SVGs semânticos, destinos legíveis, descrições no desktop e barra compacta no celular, incluindo paisagem. `tour-adapter.js` desativa somente o início automático dos áudios globais no iframe da skin para evitar duplicação; a trilha é controlada pela interface externa. Arquivos JavaScript exportados do player preservados. O acesso direto ao tour nativo mantém seu áudio original.
+
+Para hospedar, envie o conteúdo completo desta pasta; a entrada pública é `index.html` ou `index.htm`, ambos com a skin. `tour/index.htm` é o player interno. Ao reexportar pelo 3DVista, reaplique os links externos de `loading-skin.css` e `tour-adapter.js` no HTML nativo antes do envio.
