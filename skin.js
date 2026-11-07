@@ -80,9 +80,7 @@ setInterval(()=>{try{const root=frame.contentWindow.tour?._getRootPlayer?.();con
 $('#fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{toast('Use a opção de tela cheia do seu navegador.');}};
 document.addEventListener('fullscreenchange',()=>$('#fullscreen').setAttribute('aria-label',document.fullscreenElement?'Sair da tela cheia':'Tela cheia'));
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-let effects=!reduce.matches;
-function applyEffects(){document.body.classList.toggle('effects-off',!effects);$('#effects').setAttribute('aria-pressed',String(effects));$('#effects').setAttribute('aria-label',effects?'Reduzir efeitos':'Ativar efeitos natalinos');}
-$('#effects').onclick=()=>{effects=!effects;applyEffects();};applyEffects();
+document.body.classList.toggle('effects-off',reduce.matches);
 for(let i=0;i<34;i++){const p=document.createElement('i');p.className='snow';p.style.left=((i*29.41)%100)+'%';p.style.setProperty('--duration',(14+i%11)+'s');p.style.setProperty('--delay',(-i*.91)+'s');p.style.setProperty('--opacity',(.15+(i%4)*.13));$('#magic').append(p);}
 const santa=document.createElement('img');santa.src='assets/papai-noel.apng';santa.alt='';santa.className='santa';$('#magic').append(santa);
 // Audio is enabled only when a valid, supplied recording is configured in audio.json.
