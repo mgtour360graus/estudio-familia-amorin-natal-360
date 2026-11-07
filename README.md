@@ -14,7 +14,7 @@ Sirva esta pasta por HTTP. A entrada é `index.html`; `tour/index.htm` contém o
 4. Atualize `scenes.json` se houver alteração na ordem ou quantidade de panoramas.
 5. Teste a versão local e o endereço público, incluindo agenda e dispositivos físicos.
 
-A capa está no projeto nativo, na tela de carregamento, e também em `assets/capa-natal.png`. Seu original vetorial é `assets/capa-natal.svg`.
+A arte original em `assets/capa-natal.png` é o thumbnail do projeto. O carregamento usa a nova composição centralizada: `assets/capa-carregamento-desktop.png` e `assets/capa-carregamento-mobile.png`. Seus originais vetoriais também estão em `assets/`. No VTP, a imagem usa ajuste dentro e alinhamento central; na publicação, `loading-skin.css` escolhe a versão vertical em telas de retrato. Preserve o link a esse CSS no índice externo do player após uma nova exportação.
 
 ## Agenda
 
@@ -22,7 +22,9 @@ O botão abre a agenda pública do Google Calendar em um diálogo com botão de 
 
 ## Música
 
-`audio.json` está sem fonte. O arquivo fornecido com extensão MP4 continha uma resposta HTML “410 Gone”; nenhum áudio substituto foi inventado. Ao receber o áudio válido, coloque-o em `assets/`, configure `src` em `audio.json` e aplique também no projeto nativo. O áudio da interface é iniciado por clique, em loop e com volume inicial 22%.
+O arquivo válido `videoplayback.m4a` fornecido pelo usuário foi copiado para `assets/trilha-natal.m4a`: AAC estéreo, aproximadamente 2 min 8 s. `audio.json` configura essa faixa em loop, com volume inicial de 22%. A reprodução começa após “Explorar em 360°”, a primeira interação com o panorama ou o botão de som; o botão permite pausar e retomar. A reprodução pausa quando a aba perde visibilidade.
+
+No VTP, a mesma faixa está configurada pelo usuário em Música de Fundo, com repetição. A versão web atual reproduz a trilha pela interface externa. Após futuras exportações com áudio nativo, confira que apenas uma fonte está tocando para evitar duplicação.
 
 ## Arquivos publicados
 

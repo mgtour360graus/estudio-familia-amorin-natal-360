@@ -1,0 +1,6 @@
+/* External loading-screen rules: preserve the 3DVista engine and frame the complete cover. */
+#preloadContainer{background:#101e18!important}
+#preloadContainer>div:first-child{background-image:url('assets/capa-carregamento-desktop-v2.png')!important;background-size:contain!important;background-position:center!important;background-color:#101e18!important}
+#preloadContainer>div:last-child{top:auto!important;bottom:3%!important;height:3.5%!important;display:flex;align-items:center;justify-content:center}
+#preloadContainer>div:last-child span{color:#e6c697!important;font-size:clamp(11px,1.4vmin,16px)!important;letter-spacing:2px!important}
+@media(max-aspect-ratio:4/5){#preloadContainer>div:first-child{background-image:url('assets/capa-carregamento-mobile-v2.png')!important}}

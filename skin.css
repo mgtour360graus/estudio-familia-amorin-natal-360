@@ -6,3 +6,4 @@
 @media(max-height:680px) and (max-width:760px){.welcome{bottom:155px;padding-top:22px}.welcome>.eyebrow,.welcome-foot{display:none}.chapter{margin-top:0}h1{font-size:35px}.welcome p{margin:12px 0}.drag-hint{margin:10px 0 15px}.top{min-height:66px}.brand img{height:35px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#magic{display:none}}
 @media(max-width:760px){.tools button,.tools a{width:20%}}
+.tour-loading .top,.tour-loading main,.tour-loading #magic,.tour-loading .garland,.tour-loading .vignette{visibility:hidden;pointer-events:none}
