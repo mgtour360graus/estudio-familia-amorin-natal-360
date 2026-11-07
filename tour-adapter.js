@@ -4,13 +4,16 @@
  'use strict';
  let hosted=false;
  try { hosted=window.parent!==window && window.parent.document.getElementById('tour')?.contentWindow===window; } catch {}
- if(!hosted || !window.TDV?.PlayerAPI?.defineScript)return;
- const define=TDV.PlayerAPI.defineScript;
- TDV.PlayerAPI.defineScript=function(script,...args){
-  if(script?.id==='rootPlayer' && typeof script.start==='string'){
-   script.start=script.start.replace(/this\.playAudioList\(\[this\.audio_[A-Za-z0-9_]+\],\s*true\);?\s*/g,'');
-   for(const item of script.definitions||[])if(item.class==='MediaAudio')item.autoplay=false;
-  }
-  return define.call(this,script,...args);
- };
+ if(!hosted)return;
+ // Wait until the native engine has installed its script functions, then intercept
+ // only the imported background track. Keep signed player definitions unchanged.
+ document.addEventListener('DOMContentLoaded',()=>{
+  const original=window.TDV?.Tour?.Script?.playAudioList;
+  if(!original)return;
+  TDV.Tour.Script.playAudioList=function(items,loop,...args){
+   const background=loop && items?.length===1 && items[0]?.get?.('id')==='audio_AC637F3C_B211_2216_41DA_20F7FE2B21CA';
+   if(background)return;
+   return original.call(this,items,loop,...args);
+  };
+ },{once:true});
 })();
