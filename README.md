@@ -40,3 +40,8 @@ Criação: MG Tour 360°. Fotografias e identidade visual: seus respectivos titu
 Nova exportação nativa com favicon e ícones para dispositivos incorporada. Menu redesenhado com SVGs semânticos, destinos legíveis, descrições no desktop e barra compacta no celular, incluindo paisagem. `tour-adapter.js` desativa somente o início automático dos áudios globais no iframe da skin para evitar duplicação; a trilha é controlada pela interface externa. Arquivos JavaScript exportados do player preservados. O acesso direto ao tour nativo mantém seu áudio original.
 
 Para hospedar, envie o conteúdo completo desta pasta; a entrada pública é `index.html` ou `index.htm`, ambos com a skin. `tour/index.htm` é o player interno. Ao reexportar pelo 3DVista, reaplique os links externos de `loading-skin.css` e `tour-adapter.js` no HTML nativo antes do envio.
+
+
+## Controle VR no celular
+
+Em telas pequenas e dispositivos de toque, o controle de tela cheia é substituído por Óculos VR, com ícone vetorial de óculos e acionamento do fluxo VR nativo do 3DVista. O player pode pedir a confirmação e o tipo de Cardboard. A interface externa se recolhe durante a configuração e o modo VR. Sair do VR restaura o passeio; se a configuração nativa ainda estiver aberta, recarrega o iframe preservando a vista pelo deep link. No desktop permanece o controle de tela cheia. VR exige HTTPS e suporte do dispositivo; entrada no assistente e cancelamento verificados em navegador, sem teste em óculos físicos.

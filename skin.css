@@ -9,6 +9,8 @@
 .tour-loading .top,.tour-loading main,.tour-loading #magic,.tour-loading .garland,.tour-loading .vignette{visibility:hidden;pointer-events:none}
 
 /* Website navigation: readable destinations, semantic line icons and quiet controls. */
+#exit-vr{display:none;position:fixed;right:16px;top:16px;z-index:40;border-radius:24px;padding:12px 18px;font-size:12px;color:var(--cream)}
+.vr-active #exit-vr{display:block}.vr-active .top,.vr-active main,.vr-active #magic,.vr-active .garland,.vr-active .vignette{visibility:hidden;pointer-events:none}
 .welcome.hidden{animation:none}
 .tools{width:230px;right:32px;padding:20px 12px 10px;border-radius:24px;gap:4px;background:linear-gradient(145deg,rgba(25,43,33,.86),rgba(16,30,24,.68));box-shadow:0 20px 60px #06150d38,inset 0 1px 0 #fff1}
 .nav-heading{padding:0 12px 16px;font-size:9px;letter-spacing:2px;color:var(--gold);border-bottom:1px solid var(--line);margin-bottom:5px}
