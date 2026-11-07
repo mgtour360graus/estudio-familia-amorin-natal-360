@@ -75,8 +75,9 @@ function connectTour() {
   doc.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('dialog[open]').forEach(closeDialog);});
  } catch { /* The tour is expected to be deployed on the same origin. */ }
 }
-frame.addEventListener('load',connectTour);
-const loadingWatch=setInterval(()=>{try{const doc=frame.contentDocument;const preloader=doc?.getElementById('preloadContainer');if(frame.contentWindow.tour&&(!preloader||preloader.style.display==='none')){document.body.classList.remove('tour-loading');clearInterval(loadingWatch);}}catch{}},150);
+frame.addEventListener('load',()=>{connectTour();if(document.body.classList.contains('tour-loading'))revealWhenReady();});
+function revealWhenReady(){const loadingWatch=setInterval(()=>{try{const doc=frame.contentDocument;const preloader=doc?.getElementById('preloadContainer');if(frame.contentWindow.tour&&(!preloader||preloader.style.display==='none')){document.body.classList.remove('tour-loading');clearInterval(loadingWatch);}}catch{}},150);}
+revealWhenReady();
 // Synchronize the label after native hotspot navigation using the exported 3DVista playlist.
 setInterval(()=>{try{const root=frame.contentWindow.tour?._getRootPlayer?.();const i=root?.mainPlayList?.get('selectedIndex');if(Number.isInteger(i)&&i!==selected&&scenes[i])updateScene(i);}catch{}},700);
 const mobileControls=matchMedia('(max-width:760px), (hover:none) and (pointer:coarse)');
@@ -105,7 +106,7 @@ displayButton.onclick=async()=>{
  }
  try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{toast('Use a opção de tela cheia do seu navegador.');}
 };
-vrExit.onclick=()=>{const pending=vrRequested;vrRequested=false;vrWasActive=false;try{const root=vrRoot();for(const player of root?.getByClassName('PanoramaPlayer')||[])if(player.get('viewMode')==='cardboard')player.set('viewMode','standard');root?.disableVR();if(pending){frame.contentWindow.tour.updateDeepLink();frame.contentWindow.location.reload();}}catch{}document.body.classList.remove('vr-active');displayButton.focus();};
+vrExit.onclick=()=>{const pending=vrRequested;vrRequested=false;vrWasActive=false;try{const root=vrRoot();for(const player of root?.getByClassName('PanoramaPlayer')||[])if(player.get('viewMode')==='cardboard')player.set('viewMode','standard');root?.disableVR();if(pending){frame.contentWindow.tour.updateDeepLink();document.body.classList.add('tour-loading');frame.contentWindow.location.reload();}}catch{document.body.classList.remove('tour-loading');}document.body.classList.remove('vr-active');displayButton.focus();};
 setInterval(()=>{try{const root=vrRoot();const active=root?.getMainViewer?.()?.get('viewMode')==='vr'||root?.isCardboardViewMode?.();if(active){vrWasActive=true;vrRequested=false;}else if(vrWasActive){vrWasActive=false;}document.body.classList.toggle('vr-active',active||vrRequested);}catch{}},250);
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 document.body.classList.toggle('effects-off',reduce.matches);
